@@ -1,1 +1,8 @@
 # META_LLM4Celltype
+In the field of single-cell annotation, traditional approaches typically rely on clustering analysis and differential gene expression to generate gene lists, which are subsequently used for manual annotation based on marker genes. Recently, large language models (LLMs) have been employed to directly predict cell types from these gene lists. However, their performance is still far from satisfactory without reasoning processes. 
+
+In this paper, we propose a simple yet effective prompt engineering approach named Memory-enhanced Prompting with Uncertainty (META) to enhance the performance of LLMs in single-cell annotation. In particular, we first include the ranking of genes into the chain-of-thought reasoning to enhance the understanding of single-cells. More importantly, we include the previous annotations from LLMs along with their confidence in the prompts, which can mitigate the potential overlaps of guess for better annotation. We also introduce a more reasonable evaluation metric to recognize finer granularity in cell type predictions. 
+
+Interestingly, we find that while META with chain-of-thought (CoT) significantly boosts performance for standard LLMs, explicitly incorporating CoT can surprisingly degrade performance in reasoning-focused models like DeepSeek-R1. Furthermore, we observe that distillation negatively impacts performance on this knowledge-intensive task, while model scaling consistently improves results across both reasoning and non-reasoning architectures. 
+
+Experiments on several benchmark datasets validate the effectiveness of our proposed META in comparison to current baselines, and further explore the nuanced behaviors of different LLM architectures in biological annotation.
